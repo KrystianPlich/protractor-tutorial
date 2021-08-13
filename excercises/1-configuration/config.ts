@@ -8,7 +8,7 @@ export const config: Config = {
     framework: 'jasmine2',
 
     SELENIUM_PROMISE_MANAGER: false,
-    baseUrl: 'http://jacekokrojek.github.io',
+    baseUrl: 'http://jacekokrojek.github.io/jak-to-zrobic-w-js',
     params: { username: 'admin', password: 'admin' },
 
     capabilities: {
@@ -29,6 +29,7 @@ export const config: Config = {
 
     specs: [
         "minimal.spec.ts",
+        "admin.spec.ts"
     ],
 
     onPrepare: () => {
