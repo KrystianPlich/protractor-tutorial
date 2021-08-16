@@ -9,9 +9,9 @@ describe('Protractor Workshop app', function() {
 	});
 
 	it('should hide GDRP popup after clicking Accept', async function(){
-		const popupButton = element(by.css('.cookieButton a'));
+		const popupButton = element(by.css('.cookieConsentContainer[style*="opacity: 1"] .cookieButton a'));
 		const popupContainer = element(by.css('.cookieConsentContainer'));
-		await popupButton.click();
+		await browser.wait(EC.visibilityOf(popupButton), 2000);
 		await popupButton.click();
 		await browser.wait(EC.invisibilityOf(popupContainer), 2000);
 	});
