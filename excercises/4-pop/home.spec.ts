@@ -11,12 +11,18 @@ describe('Protractor Workshop app', function() {
 		expect(await homePage.getTitle()).toEqual("Protractor workshop | Home");
 	});
 
-	xit('should have Feature A, Feature B, Feature C sections ...', function () {
+	it('should have Feature A, Feature B, Feature C sections ...', async function () {
 		//TODO: add new function to homePage class and implement the test
+		const expectedFeatures = ['Feature A', 'Feature B', 'Feature C'];
+		expect(await homePage.getFeatureText()).toEqual(expectedFeatures);
 	});
 
-	xit('should have Contact menu item that redirects to correct link to Contact us page', async function(){
+	it('should have Contact menu item that redirects to correct link to Contact us page', async function(){
 		//TODO: implement menu class and implement the test
+		const expectedTitle = "Protractor workshop | Contact Us"
+		await homePage.clickMenuAtIdx(4);
+		let pageTitle = homePage.getTitle();
+		expect(pageTitle).toBe(expectedTitle);
 	});
 
 });
